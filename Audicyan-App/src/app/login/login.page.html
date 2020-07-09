@@ -1,0 +1,28 @@
+<ion-header>
+  <div class="app-logo">
+    <img src="assets/logo.png" alt="Audicyan`s logo">
+  </div>
+</ion-header>
+
+
+<ion-body color="dark">
+  
+  <ion-p>Welcome to Audicyan!</ion-p>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <ion-item color="dark">
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-button (click)="onClick()" expand="block" shape="round">
+      Sign in
+    </ion-button>
+  </form>
+  <ion-button class="sign-up-button" (click)="onClick()" expand="block" fill="clear" shape="round">
+    Sign up
+  </ion-button>
+  <a>Forgot your password?</a>
+</ion-body>
