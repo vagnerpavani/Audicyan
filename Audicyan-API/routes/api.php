@@ -18,8 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//users routes
 Route::post('register', 'UserController@CreateUser');
 Route::get('showUser/{id}','UserController@ShowUser');
 Route::get('listUsers', 'UserController@ListUsers');
 Route::put('editUser/{id}','UserController@UpdateUser');
 Route::delete('deleteUser/{id}','UserController@DeleteUser');
+
+//instruments routes
+Route::post('registerInstrument', 'InstrumentController@CreateInstrument');
+Route::get('showInstrument/{id}','InstrumentController@ShowInstrument');
+Route::get('listInstrument', 'InstrumentController@ListInstruments');
+Route::put('editInstrument/{id}','InstrumentController@UpdateInstrument');
+Route::delete('deleteInstrument/{id}','InstrumentController@DeleteInstrument');
