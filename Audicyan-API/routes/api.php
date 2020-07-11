@@ -31,3 +31,10 @@ Route::get('showInstrument/{id}','InstrumentController@ShowInstrument');
 Route::get('listInstrument', 'InstrumentController@ListInstruments');
 Route::put('editInstrument/{id}','InstrumentController@UpdateInstrument');
 Route::delete('deleteInstrument/{id}','InstrumentController@DeleteInstrument');
+
+//skills routes
+Route::post('registerSkill', 'SkillController@CreateSkill');
+Route::get('showSkill/{id}','SkillController@ShowSkill');
+Route::get('listSkill', 'SkillController@ListSkill');
+Route::put('editSkill/{id}','SkillController@UpdateSkill');
+Route::delete('deleteSkill/{id}','SkillController@DeleteSkill');
