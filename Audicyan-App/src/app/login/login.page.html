@@ -8,16 +8,16 @@
 <ion-body color="dark">
   
   <ion-p>Welcome to Audicyan!</ion-p>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <form [formGroup]="login" (ngSubmit)="onSubmit(login)">
     <ion-item color="dark">
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="email" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item color="dark">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <ion-button (click)="onClick()" expand="block" shape="round">
+    <ion-button type="submit" expand="block" shape="round">
       Sign in
     </ion-button>
   </form>
