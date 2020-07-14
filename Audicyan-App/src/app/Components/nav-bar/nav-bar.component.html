@@ -5,8 +5,8 @@
     <ion-icon name="ellipsis-vertical-outline" slot="end" size="large"></ion-icon>
   </ion-toolbar>
   <ion-row id="navigation">
-    <button [class.activated-button]="homeActivated" name="home">Home</button>
-    <button name="profile">your profile</button>
-    <button name="chat">chat</button>
+    <button [routerLink]="['/home']" routerLinkActive="router-link-active"  name="home">Home</button>
+    <button [routerLink]="['/profile']" routerLinkActive="router-link-active"  name="profile">Your Profile</button>
+    <button [routerLink]="['/inbox']" routerLinkActive="router-link-active"  name="chat">Chat</button>
   </ion-row>
 </ion-header>

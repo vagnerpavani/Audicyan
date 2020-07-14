@@ -1,45 +1,45 @@
 <ion-card>
   <ion-row class="ion-justify-content-center" >
     <ion-col size="6">
-      <img src="../../../assets/testPic.jpg" alt="">
+      <img [src]="musicians[index].pic" alt="">
     </ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="8">
       <ion-card-header>
-        <ion-card-subtitle>Guitar player</ion-card-subtitle>
-        <ion-card-title>Vagner</ion-card-title>
+        <ion-card-subtitle>{{musicians[index].instrument}} player</ion-card-subtitle>
+        <ion-card-title>{{musicians[index].name}}</ion-card-title>
       </ion-card-header>
     </ion-col>
   </ion-row >
   <ion-row class="ion-justify-content-center">
     <ion-col size="8">
       <ion-card-content>
-        experience: 12 years
+        experience: {{musicians[index].experience}}
       </ion-card-content>
     </ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="8">
       <ion-card-content>
-        from: Rio de Janeiro
+        from: {{musicians[index].from}}
       </ion-card-content>
     </ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="8">
       <ion-card-content>
-        Genres: Metal, jazz, pop
+        Genres: {{musicians[index].Genres[0]}}, {{musicians[index].Genres[1]}}, {{musicians[index].Genres[2]}}
       </ion-card-content>
     </ion-col>
   </ion-row>
 </ion-card>
 
 <div class="button-wrapper">
-  <button class="choose-button positive">
+  <button class="choose-button positive" (click)="likeOrPass(true)">
     <ion-icon size="large" name="thumbs-up-sharp"></ion-icon>
   </button>
-  <button class="choose-button negative" >
+  <button class="choose-button negative" (click)="likeOrPass(false)">
     <ion-icon name="thumbs-down-sharp" size="large"></ion-icon>
   </button>
 </div>

@@ -25,12 +25,10 @@ button{
     background-color:#25292b ;
     color: var(--ion-color-primary);
 }
-.activated-button{
+.router-link-active{
     border-bottom: 2px solid var(--ion-color-primary);
 }
-.button-deactivated{
-    border-bottom: none;
-}
+
 
 button:hover{
     border-bottom: 2px solid var(--ion-color-primary);
