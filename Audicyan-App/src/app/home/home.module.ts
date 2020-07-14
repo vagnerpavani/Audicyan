@@ -4,7 +4,13 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
+
 import { HomePageRoutingModule } from './home-routing.module';
+import { NavBarComponent } from '../Components/nav-bar/nav-bar.component';
+import { PickerComponent } from '../Components/picker/picker.component';
+
+
+  
 
 
 @NgModule({
@@ -12,8 +18,12 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    
+
+    
+
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, NavBarComponent, PickerComponent]
 })
 export class HomePageModule {}

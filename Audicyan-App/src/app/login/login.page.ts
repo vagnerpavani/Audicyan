@@ -4,9 +4,9 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
   
 
 @Component({
-    selector: 'app-login',
-  	templateUrl: './login.page.html',
-  	styleUrls: ['./login.page.scss'],
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
   	login: FormGroup;
@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   	constructor(public formBuilder: FormBuilder) {
 		this.login = this.formBuilder.group({
 			email: [null, [Validators.email, Validators.required]],
-			password: [null, [Validators.minLength(6), Validators.required]],
+			password: [null, [Validators.minLength(8), Validators.required]],
 	  });
  	}	
 	
@@ -23,11 +23,7 @@ export class LoginPage implements OnInit {
 
  	ngOnInit() {}
 
-  	onSubmit(){
-    	console.log(this.login.value)
-  	}
-
-  
-  
-  
+  onSubmit(){
+  	console.log(this.login.value)
+  }
 }
