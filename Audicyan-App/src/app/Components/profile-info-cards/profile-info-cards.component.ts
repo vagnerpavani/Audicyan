@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser'
 
 
 
@@ -11,15 +12,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileInfoCardsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
   
 
   //hardcoded data for tests
   genres = ["samba", "jazz", "bossa nova"]
   skills = ["music theory", "music production"]
-  material1 = "https://open.spotify.com/embed/track/5pRFseHNdKQgHAW5MQzCqb"
+  material1 = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/track/5pRFseHNdKQgHAW5MQzCqb") 
   
-  private materials = []
+  private materials = [this.material1]
   ngOnInit() {}
 
 }

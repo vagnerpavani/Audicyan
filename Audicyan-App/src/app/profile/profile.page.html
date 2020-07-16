@@ -1,15 +1,16 @@
 <app-nav-bar></app-nav-bar>
+<ion-content>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6">
+      <img id="profile-pic" [src]="musician.pic" alt="">
+    </ion-col>
+    <ion-col size="12" >
+      <p class="musician-basic-info">Name: {{musician.name}}</p>
+      <p class="musician-basic-info">{{musician.instrument}} player</p>
+      <p class="musician-basic-info">experience: {{musician.experience}}</p>
+      <p class="musician-basic-info">from: {{musician.from}}</p>
+    </ion-col>
+  </ion-row>
 
-<ion-row class="ion-justify-content-center">
-  <ion-col size="6">
-    <img id="profile-pic" [src]="musician.pic" alt="">
-  </ion-col>
-  <ion-col size="12" >
-    <p class="musician-basic-info">Name: {{musician.name}}</p>
-    <p class="musician-basic-info">{{musician.instrument}} player</p>
-    <p class="musician-basic-info">experience: {{musician.experience}}</p>
-    <p class="musician-basic-info">from: {{musician.from}}</p>
-  </ion-col>
-</ion-row>
-
-<app-profile-info-cards></app-profile-info-cards>
+  <app-profile-info-cards></app-profile-info-cards>
+</ion-content>
