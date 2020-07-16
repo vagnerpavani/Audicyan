@@ -24,6 +24,11 @@ Route::get('showUser/{id}','UserController@ShowUser');
 Route::get('listUsers', 'UserController@ListUsers');
 Route::put('editUser/{id}','UserController@UpdateUser');
 Route::delete('deleteUser/{id}','UserController@DeleteUser');
+//user->instruments
+Route::get('userInstruments/{id}','UserController@GetUserInstruments');
+Route::post('insertUserInstrument/{user_id}/{instrument_id}', 'UserController@InstertUserInstruments');
+Route::delete('deleteUserInstrument/{user_id}/{instrument_id}', 'UserController@EraseUserInstrument');
+    
 
 //instruments routes
 Route::post('registerInstrument', 'InstrumentController@CreateInstrument');
@@ -38,3 +43,10 @@ Route::get('showSkill/{id}','SkillController@ShowSkill');
 Route::get('listSkill', 'SkillController@ListSkill');
 Route::put('editSkill/{id}','SkillController@UpdateSkill');
 Route::delete('deleteSkill/{id}','SkillController@DeleteSkill');
+
+//materials routes
+Route::post('registerMaterial', 'MaterialController@CreateMaterial');
+Route::get('showMaterial/{id}','MaterialController@ShowMaterial');
+Route::get('listMaterial', 'MaterialController@ListMaterial');
+Route::put('editMaterial/{id}','MaterialController@UpdateMaterial');
+Route::delete('deleteMaterial/{id}','MaterialController@DeleteMaterial');

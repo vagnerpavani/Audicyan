@@ -37,5 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function instruments()
+    {
+        return $this->belongsToMany('App\Instrument');
+    }
     
 }

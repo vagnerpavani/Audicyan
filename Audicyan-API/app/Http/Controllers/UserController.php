@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
+
 class UserController extends Controller
 {
     public function CreateUser(request $user){
@@ -64,4 +65,27 @@ class UserController extends Controller
 
         return response()->json($userData);
     }
+
+    //User instrument relationship functions
+    public function GetUserInstruments($id){
+        $user = User::findOrFail($id);
+        
+        $instruments = $user->instruments()->get();
+        return response()->json($instruments);
+    }
+
+    public function InstertUserInstruments($user_id, $instruments_id){
+        $user = User::findOrFail($user_id);
+        $user->instruments()->attach($instruments_id);
+
+        return $user->instruments()->get();
+    }
+
+    public function EraseUserInstrument($user_id, $instruments_id){
+        $user = User::findOrFail($user_id);
+        $user->instruments()->detach($instruments_id);
+
+        return $user->instruments()->get();
+    }
+
 }
