@@ -74,18 +74,39 @@ class UserController extends Controller
         return response()->json($instruments);
     }
 
-    public function InstertUserInstruments($user_id, $instruments_id){
+    public function InstertUserInstrument($user_id, $instruments_id){
         $user = User::findOrFail($user_id);
         $user->instruments()->attach($instruments_id);
 
-        return $user->instruments()->get();
+        return response()->json($user->instruments()->get());
     }
 
     public function EraseUserInstrument($user_id, $instruments_id){
         $user = User::findOrFail($user_id);
         $user->instruments()->detach($instruments_id);
 
-        return $user->instruments()->get();
+        return response()->json($user->instruments()->get());
     }
 
+    //User skill relationship functions
+    public function GetUserSkills($id){
+        $user = User::findOrFail($id);
+        
+        $skills = $user->skills()->get();
+        return response()->json($skills);
+    }
+
+    public function InstertUserSkill($user_id, $skill_id){
+        $user = User::findOrFail($user_id);
+        $user->skills()->attach($skill_id);
+
+        return response()->json($user->skills()->get());
+    }
+
+    public function EraseUserSkill($user_id, $skill_id){
+        $user = User::findOrFail($user_id);
+        $user->skills()->detach($skill_id);
+
+        return response()->json($user->skills()->get());
+    }
 }

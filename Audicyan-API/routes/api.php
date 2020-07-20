@@ -26,8 +26,12 @@ Route::put('editUser/{id}','UserController@UpdateUser');
 Route::delete('deleteUser/{id}','UserController@DeleteUser');
 //user->instruments
 Route::get('userInstruments/{id}','UserController@GetUserInstruments');
-Route::post('insertUserInstrument/{user_id}/{instrument_id}', 'UserController@InstertUserInstruments');
+Route::post('insertUserInstrument/{user_id}/{instrument_id}', 'UserController@InstertUserInstrument');
 Route::delete('deleteUserInstrument/{user_id}/{instrument_id}', 'UserController@EraseUserInstrument');
+//user->skills
+Route::get('userSkills/{id}','UserController@GetUserSkills');
+Route::post('insertUserSkill/{user_id}/{skill_id}', 'UserController@InstertUserSkill');
+Route::delete('deleteUserSkill/{user_id}/{skill_id}', 'UserController@EraseUserSkill');
     
 
 //instruments routes

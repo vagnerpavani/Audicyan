@@ -42,4 +42,8 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Instrument');
     }
     
+    public function skills()
+    {
+        return $this->belongsToMany('App\Skill');
+    }
 }
