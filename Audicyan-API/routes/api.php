@@ -32,6 +32,10 @@ Route::delete('deleteUserInstrument/{user_id}/{instrument_id}', 'UserController@
 Route::get('userSkills/{id}','UserController@GetUserSkills');
 Route::post('insertUserSkill/{user_id}/{skill_id}', 'UserController@InstertUserSkill');
 Route::delete('deleteUserSkill/{user_id}/{skill_id}', 'UserController@EraseUserSkill');
+//user->materials
+Route::get('userMaterials/{id}','UserController@GetUserMaterials');
+Route::post('insertUserMaterial/{user_id}', 'UserController@InstertUserMaterial');
+Route::delete('deleteUserMaterial/{user_id}/{material_id}', 'UserController@EraseUserMaterial');
     
 
 //instruments routes

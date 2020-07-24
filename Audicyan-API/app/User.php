@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Skill');
     }
+
+    public function materials()
+    {
+        return $this->hasMany('App\Material');
+    }
 }

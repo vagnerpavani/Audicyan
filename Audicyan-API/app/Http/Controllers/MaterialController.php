@@ -7,7 +7,7 @@ use App\Material;
 
 class MaterialController extends Controller
 {
-    public function CreateMaterials(request $Materials){
+    public function CreateMaterial(request $Materials){
         $newMaterials = new Material;
 
         $newMaterials->url = $Materials->url;
@@ -16,23 +16,23 @@ class MaterialController extends Controller
         return response()->json($newMaterials);
     }
 
-    public function ShowMaterials($id){
+    public function ShowMaterial($id){
         $Materials = Material::findOrFail($id);
 
         return response()->json($Materials);
     }
 
-    public function ListMaterials(){
+    public function ListMaterial(){
         $Materialss = Material::all();
         return response()->json($Materialss);
     }
 
-    public function DeleteMaterials($id){
+    public function DeleteMaterial($id){
         Material::destroy($id);
         return response('habilidade deletada!');
     }
 
-    public function UpdateMaterials(request $newMaterialsData, $id){
+    public function UpdateMaterial(request $newMaterialsData, $id){
 
         $MaterialsData = Material::findOrFail($id);
 

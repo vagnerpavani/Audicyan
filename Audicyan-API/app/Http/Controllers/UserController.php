@@ -109,4 +109,26 @@ class UserController extends Controller
 
         return response()->json($user->skills()->get());
     }
+
+    //User material relationship functions
+    public function InstertUserMaterial($user_id, request $requestData){
+        $user = User::findOrFail($user_id);
+        $materialData = [ 'url' => $requestData->url];
+        $user->materials()->create($materialData);
+
+        return response()->json($user->materials()->get());
+    }
+
+    public function GetUserMaterials($user_id){
+       $user = User::findOrFail($user_id);
+       
+       return response()->json($user->materials()->get());
+    }
+
+    public function EraseUserMaterial($user_id, $material_id){
+        $user = User::findOrFail($user_id);
+        $user->materials()->where('id', '=', $material_id)->delete();
+        
+        return response()->json($user->materials()->get());
+    }
 }
