@@ -15,8 +15,8 @@ class CreateInstrumentUserTable extends Migration
     {
         Schema::create('instrument_user', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('instrument_id');
-            $table->bigInteger('user_id');      
+            $table->unsignedBigInteger('instrument_id');
+            $table->unsignedBigInteger('user_id');      
             $table->timestamps();
         });
     }
