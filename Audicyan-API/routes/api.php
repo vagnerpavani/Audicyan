@@ -13,17 +13,23 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('register', 'API\PassportController@Register');
+Route::post('login', 'API\PassportController@Login');
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('logout', 'API\PassportController@Logout');
+});
+
+
 //users routes
-Route::post('register', 'UserController@CreateUser');
-Route::get('showUser/{id}','UserController@ShowUser');
-Route::get('listUsers', 'UserController@ListUsers');
-Route::put('editUser/{id}','UserController@UpdateUser');
-Route::delete('deleteUser/{id}','UserController@DeleteUser');
+Route::post('UserRegister', 'UserController@CreateUser');
+Route::get('ShowUser/{id}','UserController@ShowUser');
+Route::get('ListUsers', 'UserController@ListUsers');
+Route::put('EditUser/{id}','UserController@UpdateUser');
+Route::delete('DeleteUser/{id}','UserController@DeleteUser');
 //user->instruments
 Route::get('userInstruments/{id}','UserController@GetUserInstruments');
 Route::post('insertUserInstrument/{user_id}/{instrument_id}', 'UserController@InstertUserInstrument');
