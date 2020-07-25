@@ -36,6 +36,10 @@ Route::delete('deleteUserSkill/{user_id}/{skill_id}', 'UserController@EraseUserS
 Route::get('userMaterials/{id}','UserController@GetUserMaterials');
 Route::post('insertUserMaterial/{user_id}', 'UserController@InstertUserMaterial');
 Route::delete('deleteUserMaterial/{user_id}/{material_id}', 'UserController@EraseUserMaterial');
+//user matchs
+Route::get('userMatchs/{id}','UserController@GetUserMatchs');
+Route::post('insertUserMatch/{user_id}/{other_user_id}', 'UserController@InstertUserMatch');
+Route::delete('deleteUserMatch/{user_id}/{other_user_id}', 'UserController@EraseUserMatch');
     
 
 //instruments routes

@@ -131,4 +131,26 @@ class UserController extends Controller
         
         return response()->json($user->materials()->get());
     }
+
+    //matchs functions ( user-> user relationship )
+    public function GetUserMatchs($id){
+        $user = User::findOrFail($id);
+        
+        $matchs = $user->matchs()->get();
+        return response()->json($matchs);
+    }
+
+    public function InstertUserMatch($user_id, $other_user_id){
+        $user = User::findOrFail($user_id);
+        $user->matchs()->attach($other_user_id);
+
+        return response()->json($user->matchs()->get());
+    }
+
+    public function EraseUserMatch($user_id, $other_user_id){
+        $user = User::findOrFail($user_id);
+        $user->matchs()->detach($other_user_id);
+
+        return response()->json($user->matchs()->get());
+    }
 }

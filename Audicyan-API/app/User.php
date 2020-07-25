@@ -51,4 +51,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Material');
     }
+    
+    public function matchs()
+    {
+        return $this->belongsToMany('App\User', 'match', 'user_id', 'other_user_id');
+    }
+    
 }
